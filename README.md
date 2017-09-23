@@ -5,9 +5,9 @@ like using JBehave or the Screenplay pattern.
 
 ## Using this Project
 
-In order to use the example project simply import it as Gradle project into your favorite IDE.
-You can run the tests directly via the IDE or the Gradle "test" task. In order to create the test report run the "aggregate"
-task. The report can be found in the "target" folder as "index.html". Simply open the file in a browser.
+In order to use the example project, simply import it as Gradle project into your favorite IDE.
+You can run the tests directly via the IDE or the Gradle "test" task. The test report can be created via the "aggregate"
+task. It can be found in the "target" folder as "index.html". Simply open the file in a browser.
 
 ## Project Structure
 
