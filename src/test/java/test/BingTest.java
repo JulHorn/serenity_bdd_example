@@ -8,14 +8,23 @@ import org.junit.Ignore;
 import org.junit.Test;
 import steps.SearchSteps;
 
+/**
+ * Tests for Bing.
+ * **/
 @Narrative(text={"In order to choose the best flight for my travels",
         "As a traveller",
         "I want to be able to search for flights between specific destinations"})
 public class BingTest extends BaseTest{
 
+    /**
+     * The search steps needed for the tests.
+     * **/
     @Steps
     private SearchSteps searchSteps;
 
+    /**
+     * The positive test.
+     * **/
     @Test
     @Title("Searches for wikipedia via Bing and opens it")
     public void searchWorks() {
@@ -25,24 +34,33 @@ public class BingTest extends BaseTest{
         searchSteps.will_see_web_wikipedia();
     }
 
+    /**
+     * Test fails directly in the test.
+     * **/
     @Test
     @Title("Searches and does throws a RuntimeException")
-    public void searchWorksNotTest() {
+    public void failsInTest() {
         searchSteps.open_bing();
         searchSteps.search_for("google");
         searchSteps.open_search_result(0);
         throw new RuntimeException("Failed in test");
     }
 
+    /**
+     * Fails in a step of the step library.
+     * **/
     @Test
     @Title("Searches for wikipedia via Bing and opens it and fails in a step")
-    public void searchWorksNotStep() {
+    public void failsInStep() {
         searchSteps.open_bing();
         searchSteps.search_for("something");
         searchSteps.open_search_result(0);
         searchSteps.will_see_web_wikipedia();
     }
 
+    /**
+     * A pending test.
+     * **/
     @Test
     @Pending
     @Title("Pending")
@@ -50,6 +68,9 @@ public class BingTest extends BaseTest{
 
     }
 
+    /**
+     * An ignored test.
+     * **/
     @Test
     @Ignore
     @Title("Ignored")

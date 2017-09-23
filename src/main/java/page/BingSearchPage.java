@@ -9,7 +9,10 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-// The host part will be overwritten by the serenity.properties entry -> Mostly interesting for the path after the host
+/**
+ * Represents the Bing page. Could be splitted up into two pages but this is simpler for as a small example project.
+ * **/
+// The host part will be overwritten by the serenity.properties entry
 @DefaultUrl("http://www.bing.com")
 @At("http://www.bing.com")
 public class BingSearchPage extends BasePage {
@@ -21,14 +24,13 @@ public class BingSearchPage extends BasePage {
     private WebElementFacade searchField;
 
     /**
-     * The button, which triggers the search process.
+     * The button which triggers the search process.
      **/
     @FindBy(id = "sb_form_go")
     private WebElementFacade searchButton;
 
     /**
-     * Includes the bing result list module in this page.
-     * The given locator can be used in the custom webelement.
+     * The result list parent.
      **/
     @FindBy(id = "b_results")
     private WebElementFacade resultListContentElement;
